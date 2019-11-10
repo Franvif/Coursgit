@@ -6,11 +6,11 @@ function main
 a = [];
 b = [];
 
-while isempty(a) || ~isnumeric(a)
+while isempty(a) || round(a)~=a
   a = input('Entrez un premier nombre entier: ');
 end
 
-while isempty (b) || ~isnumeric(b)
+while isempty (b) || round(b)~=b
   b = input('Entrez un second nombre entier: ');
 end
 
@@ -18,13 +18,13 @@ op = input('Quelle opération voulez-vous réaliser ? (+ ou - ou / ou *): ','s')
 
 switch op
   case '+'
-    fprintf('add');
+    somme(a,b);
   case '-'
-    fprintf('sub');
+    difference(a,b);
   case '*'
-    fprintf('multi');
+    produit(a,b);
   case '/'
-    fprintf('div');
+    quotient(a,b);
   otherwise
     error('Opération inconnue !');
 end
